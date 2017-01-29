@@ -1,6 +1,6 @@
-# correlation between "extreme vetting" and murder of Americans
+# murder of Americans vs. "extreme vetting"
 
-Note that the numbers are unsourced, and quite possibly out of date or wrong.
+Note that the count numbers are at present unsourced, and quite possibly out of date or wrong.
 
 ```r
 library(MASS)
