@@ -5,7 +5,6 @@ Do feel free to submit a pull request if you have a better-referenced source of 
 Also note that count regression on small numbers of observations is usually a crappy idea... 
 
 ```r
-library(MASS)
 counts <- read.csv("extremeVetting.csv", row.names=1)
 show(counts)
 ```
@@ -29,9 +28,10 @@ Egypt                            162          FALSE            TRUE
 Lebanon                          159          FALSE            TRUE
 ```
 
-An overdispersed regression for counts dead vs. vetting status:
+An overdispersed regression of counts dead on extreme vetting status:
 
 ```r
+library(MASS)
 summary(glm.nb(americansKilled ~ extremeVetting, data=counts))
 ```
 
@@ -46,8 +46,8 @@ extremeVetting  -27.923991 9685.037758 -0.00288              0.9977
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-No particular relationship observed.
-We could also model it as true/false:
+No particular relationship observed under this generating model.    
+We could also model it as true/false, since there are a lot of zeroes here:
 
 ```r
 with(counts, fisher.test(sourceOfKillers, extremeVetting))
