@@ -1,6 +1,6 @@
-# murder of Americans vs. "extreme vetting"
+# "extreme vetting"
 
-Note that the count numbers are at present unsourced, and quite possibly out of date or wrong.
+Note that the count numbers are at present poorly sourced (footnote), and quite possibly out of date or wrong.    
 Do feel free to submit a pull request if you have a better-referenced source of this type of data.
 
 ```r
@@ -70,3 +70,7 @@ odds ratio
 The observed inverse relationsip is "statistically significant" (as if anyone needed a test to detect this), i.e.,
 unlikely due to chance.  Of course the case is often made that "this is why there aren't terrorists from $country"
 but that suggests some sort of clairvoyance in terms of legislation, which is... not often observed in practice.
+
+Footnote: found source image.  Still unattributed AFAIK.
+
+![source of data](source.jpg "data of unknown provenance")
