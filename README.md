@@ -2,8 +2,6 @@
 
 Note that the count numbers are at present poorly sourced (see footnote), and quite possibly out of date or wrong.    
 Do feel free to submit a pull request if you have a better-referenced source of this type of data.    
-Also note that count regression on small numbers of observations is usually a crappy idea...     
-If anything, this example demonstrates how using the "right" model isn't always helpful. 
 
 ```r
 counts <- read.csv("extremeVetting.csv", row.names=1)
@@ -29,27 +27,25 @@ Egypt                            162          FALSE            TRUE
 Lebanon                          159          FALSE            TRUE
 ```
 
-An overdispersed regression of counts dead on extreme vetting status:
+A trivial nonparametric test for difference by vetting status:
 
 ```r
-library(MASS)
-summary(glm.nb(americansKilled ~ extremeVetting, data=counts))
+wilcox.test(americansKilled ~ extremeVetting, data=counts)
 ```
 
 Results:
 
 ```r
-Coefficients:
-                  Estimate  Std. Error  z value            Pr(>|z|)    
-(Intercept)       6.621406    0.545872 12.12996 <0.0000000000000002 ***
-extremeVetting  -27.923991 9685.037758 -0.00288              0.9977    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+	Wilcoxon rank sum test with continuity correction
+
+data:  americansKilled by extremeVetting
+W = 28, p-value = 0.00312761
+alternative hypothesis: true location shift is not equal to 0
 ```
 
-No particularly strong relationship observed under this generating model.    
-(The effect size is large and negative, but the sample size is small).     
-We could also model this situation as true/false, since there are a lot of zeroes:
+As a glance at the table would suggest, "extreme vetting" isn't being    
+applied to any of the countries on this list with the most victims.    
+Of course, we could just recast this as an either/or type of question:
 
 ```r
 with(counts, fisher.test(sourceOfKillers, extremeVetting))
