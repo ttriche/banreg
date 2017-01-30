@@ -1,6 +1,6 @@
 # "extreme vetting"
 
-Note that the count numbers are at present poorly sourced (footnote), and quite possibly out of date or wrong.    
+Note that the count numbers are at present poorly sourced (see footnote), and quite possibly out of date or wrong.    
 Do feel free to submit a pull request if you have a better-referenced source of this type of data.
 
 ```r
