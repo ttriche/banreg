@@ -46,8 +46,9 @@ extremeVetting  -27.923991 9685.037758 -0.00288              0.9977
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
-No particular relationship observed under this generating model.    
-We could also model it as true/false, since there are a lot of zeroes here:
+No particularly strong relationship observed under this generating model.    
+(The effect size is large and negative, but the sample size is small).     
+We could also model this situation as true/false, since there are a lot of zeroes:
 
 ```r
 with(counts, fisher.test(sourceOfKillers, extremeVetting))
