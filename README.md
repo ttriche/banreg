@@ -2,7 +2,8 @@
 
 Note that the count numbers are at present poorly sourced (see footnote), and quite possibly out of date or wrong.    
 Do feel free to submit a pull request if you have a better-referenced source of this type of data.    
-Also note that count regression on small numbers of observations is usually a crappy idea... 
+Also note that count regression on small numbers of observations is usually a crappy idea...     
+If anything, this example demonstrates how using the "right" model isn't always helpful. 
 
 ```r
 counts <- read.csv("extremeVetting.csv", row.names=1)
@@ -70,10 +71,8 @@ odds ratio
 ```
 
 The observed inverse relationsip is "statistically significant" (as if anyone needed a test to detect this), i.e.,
-unlikely due to chance.  Of course the case is often made that "this is why there aren't terrorists from $country"
-but that suggests some sort of clairvoyance in terms of legislation, which is... not often observed in practice.
-
-Clearly, "more reasearch is needed" (commence eye-rolling).
+countries that aren't on the watch list were responsible for more casualties (according to the data provided).     
+But you already knew that from looking at the table, didn't you?   
 
 Footnote: found source image.  Still unattributed AFAIK.
 
